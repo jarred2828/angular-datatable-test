@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <table datatable="" dt-options="$ctrl.dtOptions" dt-columns="$ctrl.dtColumns" dt-instance="$ctrl.dtInstance" class="table table-responsive table-bordered hover"></table>
+      <table datatable="" dt-options="$ctrl.dtOptions" dt-columns="$ctrl.dtColumns" dt-instance="$ctrl.dtInstance" class="table table-responsive table-bordered hover">
+        <select class="form-control toggle-selection" ng-options="option.value as option.label for option in $ctrl.selectOptions" ng-model="$ctrl.selectAll" ng-change="$ctrl.toggleSelections()"></select>
+      </table>
     </div>
   </div>
 </div>

@@ -18,7 +18,17 @@ class HomeController {
       $compile: $compile,
       $uibModal: $uibModal,
       $scope: $scope,
-      dtInstance: {},     
+      dtInstance: {},
+      selectOptions: [
+        {
+          value: true,
+          label: 'Select All'
+        },
+        {
+          value: false,
+          label: 'Unselect All'
+        }
+      ],     
       dtOptions: DTOptionsBuilder.fromFnPromise(() => {
         var defer = $q.defer();
         this.rowData = _.map(this.data.centers, (element) => {
@@ -42,7 +52,9 @@ class HomeController {
         });
         return nRow;
       }).withButtons([
-        'excel'
+        'excel',
+        'csv',
+        'pdf'
       ]),
       rowClickHandler: (info) => {
         console.log(info);
@@ -126,6 +138,10 @@ class HomeController {
     var index = rowIDList.indexOf(person.ROWID);
     this.rowData.splice(index, 1);
     angular.element(document.querySelectorAll('tbody tr')[index]).remove();
+  }
+
+  toggleSelections() {
+    this.toggleAll(this.selectAll, this.selected);
   }
 }
 

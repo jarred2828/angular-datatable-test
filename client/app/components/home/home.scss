@@ -11,3 +11,15 @@ table.table-responsive {
     display: inline-table;
   }
 }
+
+div#DataTables_Table_0_paginate {
+    margin-right: 200px;
+}
+
+.toggle-selection {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1;
+  width: 150px;
+}
