@@ -1,0 +1,13 @@
+.home {
+  color: red;
+}
+
+.text-left {
+  text-align: left;
+}
+
+table.table-responsive {
+  @media screen and (min-width: 1200px) {
+    display: inline-table;
+  }
+}
